@@ -1,40 +1,51 @@
-# Heart-FailurePrediction
+# Heart Failure Prediction
 
-Cardiovascular diseases (CVDs) are the number 1 cause of death globally, taking an estimated 17.9 million lives each year, which accounts for 31% of all deaths worldwide.
-Heart failure is a common event caused by CVDs and this dataset contains 12 features that can be used to predict mortality by heart failure.
+Cardiovascular diseases (CVDs) are the leading cause of death globally, accounting for an estimated 17.9 million deaths per year, about 31% of all deaths worldwide. Heart failure is a common consequence of CVD, and this project uses a clinical dataset with 12 features to predict mortality from heart failure.
 
-Most cardiovascular diseases can be prevented by addressing behavioural risk factors such as tobacco use, unhealthy diet and obesity, physical inactivity and harmful use of alcohol using population-wide strategies.
+Most CVDs are preventable by addressing behavioural risk factors such as tobacco use, poor diet, obesity, physical inactivity, and harmful alcohol use. For people already at high cardiovascular risk (due to hypertension, diabetes, hyperlipidaemia, or existing disease), early detection matters, and a machine learning model can help.
 
-People with cardiovascular disease or who are at high cardiovascular risk (due to the presence of one or more risk factors such as hypertension, diabetes, hyperlipidaemia or already established disease) need early detection and management wherein a machine learning model can be of great help.
+## Background
 
-**BACKGROUND**
+Heart failure occurs when the heart muscle weakens and enlarges, limiting its ability to pump blood, or when the ventricles stiffen and no longer fill properly between beats. Over time the heart can't meet the body's demand for blood, and patients begin experiencing symptoms such as breathlessness.
 
-Heart failure is the state in which muscles in the heart wall get fade and enlarge, limiting heart pumping of blood. The ventricles of heart can get inflexible and do not fill properly between beats. With the passage of time heart fails in fulfilling the proper demand of blood in body and as a consequence person starts feeling difficulty in breathing.
+Common causes include coronary heart disease, diabetes, high blood pressure, and other conditions such as HIV, substance abuse, thyroid disorders, excess vitamin E, and radiation or chemotherapy. Per the WHO, coronary heart disease now accounts for 31% of deaths globally, and its prevalence is rising in India in particular, where dietary and risk-factor patterns differ from other countries.
 
-The main reason behind heart failure include coronary heart disease, diabetes, high blood pressure and other diseases like HIV, alcohol abuse or cocaine, thyroid disorders, excess of vitamin E in body, radiation or chemotherapy, etc. As stated by WHO, Cardiovascular Heart Disease (CHD) is now top reason causing 31% of deaths globally. India is also included in the list of countries where prevalence of CHD is increasing significantly.
+The goal of this project is to estimate mortality risk from heart failure and examine its relationship with major risk factors.
 
-In addition to relative scarcity of studies focusing on heart failure, the present study has specific importance in the Indian context, as diet patterns in India are different with other the countries.
+## Dataset
 
-The main objective of this study is to estimate death rates due to heart failure and to investigate its link with some major risk factors.
+13 columns, with the first 12 used as independent variables and `DEATH_EVENT` as the binary target:
 
-**DESIGN**
+| Feature | Type |
+|---|---|
+| Age | Float, discrete |
+| Anaemia | Binary |
+| Creatinine phosphokinase | Continuous |
+| Diabetes | Binary |
+| Ejection fraction | Discrete |
+| High blood pressure | Binary |
+| Platelets | Float, discrete |
+| Serum creatinine | Continuous |
+| Serum sodium | Discrete |
+| Sex | Binary |
+| Smoking | Binary |
+| Time | Discrete |
+| **DEATH_EVENT (target)** | Binary |
 
-The project is designed in a way where I have tried to use multiple classification models to predict heart failure as accurately as possible. The dataset has 13 columns which are as follows:
+Since `DEATH_EVENT` is binary, this is a binary classification problem.
 
-1.  	Age (Float, Discrete) 
-2.  	Anaemia (Binary)
-3.  	Creatinine_phosphokinase (Continous)
-4.  	Diabetes (Binary)
-5.  	Ejection_fraction (Discrete)
-6.  	High_blood_pressure (Binary)
-7.  	Platelets (Float, Discrete)
-8.  	Serum creatinine (Continous)
-9.  	Seum_sodium (Discrete)
-10.  	Sex (Binary)
-11.  	Smoking (Binary)
-12.  	Time (Discrete)
-13.  	Death_ Event (Binary
+## Repository contents
 
-We can use the first 12 columns as Independent Variables (IV) and the last column, Death_ Event, as the Dependent Variable (DV) as we are trying to estimate that feature. As Death_Event, which is out Dependent Variable, is a Binary column, this case is a Binary Classification problem.
+| File | Description |
+|---|---|
+| `Heart Failure Prediction.ipynb` | Full analysis: EDA, preprocessing, and model comparison |
+| `heart_failure_dataset.csv` | Source dataset |
+| `Description, Approach, Result Interpretation and Conclusion.pdf` | Write-up of approach, results, and conclusions |
 
-A detailed working and summary can be found in the PDF uploaded where you'll find my approach, the working and the interpretation of results and a conclusion.
+## Approach
+
+Multiple classification models are trained and compared to predict heart failure mortality as accurately as possible. See the notebook for the full modeling workflow, and the PDF for the detailed results, interpretation, and conclusion.
+
+## Tools
+
+Python · pandas · NumPy · scikit-learn · matplotlib / seaborn · Jupyter Notebook
